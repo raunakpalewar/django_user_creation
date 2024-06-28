@@ -1,0 +1,104 @@
+body
+{
+    background-color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 100%;
+    height: 100%;
+    
+}
+.h1{
+    text-align: center;
+}
+.d1{
+    background-color: #224F34;
+    color: #FFF;
+    padding: 2%;
+    margin: 5% auto;
+    width: 30%;
+    border-radius: 9px;
+    line-height: normal;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.d2{
+    color: #224F34;
+    margin: 2% auto;
+    padding: 2%;
+    background: #C2EFD4;
+    border-radius: 7px;
+    font-size: large;
+}
+form{
+    margin: 2%;
+}
+
+input[type='text'],input[type='password'],input[type='number'],input[type='email']{
+    width: 90%;
+    height: 1.2rem;
+    border-radius: 4px;
+    padding:1%
+}
+input[type='text'],input[type='password'],input[type='email'],input[type='number']:hover{
+  border-color: #224F34;
+}
+input[type='submit']{
+    background-color: #224F34;
+    color: white;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    width: 50%;
+    height: 2rem;
+    text-align: center;
+}
+input [type='submit']:hover{
+    border-color: #C2EFD4;
+}
+.n1 {
+    background-color: #C2EFD4 !important;
+    color: #224F34 !important;
+}
+
+.custom-navbar {
+    background-color: #C2EFD4;
+    color: #224F34;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: #224F34;
+}
+
+/* Right-aligned elements */
+.navbar-right {
+    margin-left: auto;
+}
+
+.navbar-right .nav-item {
+    margin-left: 20px;
+}
+
+.d3{
+    width: 80%;
+    margin: 2% auto;
+    padding: 2%;
+    background-color:#C2EFD4;
+    color:#224F34;
+}
+
+.i1{
+    width: 20%;
+    height: auto;
+    border-radius: 50%;
+    background-color: whitesmoke;
+}
+
+.b2{
+    width: 30%;
+}
+

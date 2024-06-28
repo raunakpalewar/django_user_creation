@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome</title>
+</head>
+
+<body>
+    <h1 class="h1">Login Here</h1>
+    <div class="d1">
+       <div class="d2">
+        <form action="{% url 'otpverify' %}" method="post">
+            {% csrf_token %}
+            <label for="username">Username </label><br>
+            <input type="email" name="username" value="{{user.email}}" placeholder="email" readonly> <br> <br>
+            <label for="otp">OTP</label> <br>
+            <input type="number" name="otp" placeholder="enter otp"> <br> <br>
+            <input type="submit" value="Login" name="loginbtn"> <br><br><br>
+        </form>
+       </div>
+      
+    </div>
+</body>
+</html>

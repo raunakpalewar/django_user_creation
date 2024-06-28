@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome</title>
+</head>
+
+<body>
+    <h1 class="h1">Welcome Friend</h1>
+    <div class="d1">
+        <div>
+            <h2><a href="{% url 'login' %}">Login</a></h2>
+        </div>
+        <div>
+            <h2>
+                <a href="{% url 'register' %}">New User Register Here </a>
+            </h2>
+        </div>
+    </div>
+</body>
+</html>

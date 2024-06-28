@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome</title>
+</head>
+
+<body>
+    <h1 class="h1">Login Here</h1>
+    <div class="d1">
+       <div class="d2">
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <label for="username">Username </label><br>
+            <input type="email" name="username" id="" required placeholder="email"> <br> <br>
+            <label for="password">Password</label> <br>
+            <input type="password" name="password" placeholder="password"> <br> <br>
+            <input type="submit" value="Login" name="loginbtn"> <br><br><br>
+            Login with otp:
+            <input type="submit" name="otplogin" value="Get otp">
+
+        </form>
+       </div>
+       <div>
+        {% if context.error %}
+        {{context.error}}
+        {% endif %}
+       </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<body>
+   
+    <div class="n1">
+        <nav class="navbar navbar-expand-lg custom-navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"> <img src="{% static 'images/django4.png' %}"  alt="" class="i2"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse text-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link 2</a>
+                        </li>
+                    </ul>
+                    <div class="navbar-right ml-auto">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fas fa-shopping-cart" style="color: #224f34;"></i> Cart</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'profile' %}"><i class="fa fa-user" style="color: #224f34;"></i> User</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    
+    <div class="d3">
+        <h1>Profile Section</h1>
+        <form action="{% url 'profile' %}" method="post" enctype="multipart/form-data">
+            <div class="">
+                {% if context.image %}
+                    <img src="{{ context.image.url }}" class="i1" alt="User Image">
+                {% else%}
+                <img src="{% static 'images/user2.png' %}" class="i1" alt="no img">
+                {% endif %}
+            </div><br><br>
+            {%csrf_token%}
+            <label for="Fullname">Full Name</label><br>
+            <input type="text" name="fullname" value="{{context.fullname}}"><br><br>
+            <label for="email">Email</label><br>
+            <input type="email" name="email" value="{{context.email}}"><br><br>
+            <label for="phone">Phone No</label><br>
+            <input type="number" name="phone" value="{{context.phone}}"><br><br>
+            <label for="image">Image</label><br>
+            <input type="file" name="image"><br><br>
+            <label for="password">Password</label><br>
+            <input type="password" name="password" value="{{context.password}}"><br><br>
+            <label for="cpassword">Confirm your Password</label><br>
+            <input type="password" name="cpassword" value="{{context.cpassword}}"><br><br>
+
+            <input type="submit" value="SAVE" name="submit"> <br> <br><br>
+            Delete Your Account : <input type="submit"  value="Delete Account" name="delete" style="background-color: darkred; color:white ;width:30%">
+            <br><br>
+        </form>
+    </div>
+</body>
+</html>
